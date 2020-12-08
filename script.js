@@ -1,4 +1,3 @@
-$("h1").text("weather updated");
 
 var owKey = "82db3485b1bdbce46c2ce5d7d2f3ae57";
 $.ajax({

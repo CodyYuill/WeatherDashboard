@@ -1,3 +1,26 @@
-h1{
-    color: red;
+header{
+    text-align: center;
+    color: aliceblue;
+    background-color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+#mainRow{
+    background-color: blue;
+}
+#leftSide{
+    background-color: red !important;
+}
+#rightSide{
+    background-color: chartreuse;
+}
+
+#rsTopRow{
+    background-color: chocolate;
+}
+
+#rsBotRow{
+    background-color: coral;
 }
