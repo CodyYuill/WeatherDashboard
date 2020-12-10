@@ -7,7 +7,11 @@ header{
     margin-bottom: 20px;
 }
 
-#mainRow{
+#mainContainer{
+    min-width: 1600px;
+}
+
+/* #mainRow{
     background-color: blue;
 }
 #leftSide{
@@ -23,4 +27,4 @@ header{
 
 #rsBotRow{
     background-color: coral;
-}
+} */
