@@ -8,9 +8,20 @@ header{
 }
 
 #mainContainer{
-    min-width: 1600px;
+    /* min-width: 1600px; */
 }
 
+#futureForecastCard{
+    border-radius: 5%;
+    background-color: cornflowerblue;
+    min-height: 250px;
+    color: aliceblue
+}
+#todaysForecast{
+    border-radius: 10px;
+    background-color: aquamarine;
+    margin-bottom: 10px;
+}
 /* #mainRow{
     background-color: blue;
 }

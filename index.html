@@ -30,7 +30,7 @@
                 <!-- history list -->
                 <div class="card" style="width: 18rem;">
                     <ul class="list-group list-group-flush" id="historyList">
-                      <!-- <li class="list-group-item">city 1</li> -->
+                      <li class="list-group-item">city 1</li>
                     </ul>
                 </div>
             </div>
@@ -40,77 +40,26 @@
                 <!-- sub row with todays forecast -->
                 <div class="row" id="rsTopRow">
                     <!-- jumbotron with todays forecast -->
-                    <div class="jumbotron">
-                        <h1 class="display-4" id="cityName&Date">City Name(dd/mm/yyyy)</h1>
-                        <h5 id="temp">Temperature: ___</h5>
-                        <h5 id="humidity">Humidity: ___</h5>
-                        <h5 id="windSpeed">Wind Speed: ___</h4>
-                        <h5 id="uvIndex">UV Index: ___</h5>
+                    <div class="jumbotron" id="todaysForecast">
+                        <h1 class="display-4" id="cityName&Date&Icon">City Name(dd/mm/yyyy) icon</h1>
+                        <h4 id="temp">Temperature: ___</h4>
+                        <h4 id="humidity">Humidity: ___</h4>
+                        <h4 id="windSpeed">Wind Speed: ___</h4>
+                        <h4 id="uvIndex">UV Index: ___</h4>
                     </div>                   
                 </div>
                 <!-- sub row with next 5 days forecsast -->
                 <div class="row" id="rsBotRow">
-                    <p>5 day Forecast</p>
-                    <div class="col-sm-2">
-                        <div class="card">
+                    <h5>5 day Forecast</h5>
+                    <div class="col-sm-2" id="5DayForecast">
+                        <!-- <div class="card" id="futureForecastCard">
                             <div class="card-body">
                               <h5 class="card-title" id="futureDate">(dd/mm/yyyy)</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <h6 class="card-subtitle mb-2 text-muted" id="futureIcon">icon</h6>
+                              <p class="card-text" id="futureTemp">Temperature: ___</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card" >
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-
 
                 </div>
 
