@@ -19,33 +19,34 @@
         <!-- main row -->
         <div class ="row" id="mainRow">
             <!-- left column with search bar and history buttons 25%-->
-            <div class="col-sm-3" id="leftSide">
+            <div class="col-lg-3" id="leftSide">
                 <!-- search bar -->
-                <form class="input-group mb-3" id="searchBar">
-                    <input type="text" class="form-control" placeholder="Search for a City" aria-describedby="button-addon2">
+                <form class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search for a City"  id="searchBar">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">search icon</button>
+                      <button class="btn btn-outline-secondary" type="button" id="searchBtn">search icon</button>
                     </div>
                 </form>
                 <!-- history list -->
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <ul class="list-group list-group-flush" id="historyList">
                       <li class="list-group-item">city 1</li>
                     </ul>
                 </div>
             </div>
             <!-- right column with todays forecast and next 5 days forecast -->
-            <div class="col-sm-9" if="rightSide">
+            <div class="col-lg-9" id="rightSide">
                 
                 <!-- sub row with todays forecast -->
                 <div class="row" id="rsTopRow">
                     <!-- jumbotron with todays forecast -->
                     <div class="jumbotron" id="todaysForecast">
-                        <h1 class="display-4" id="cityName&Date&Icon">City Name(dd/mm/yyyy) icon</h1>
-                        <h4 id="temp">Temperature: ___</h4>
-                        <h4 id="humidity">Humidity: ___</h4>
-                        <h4 id="windSpeed">Wind Speed: ___</h4>
-                        <h4 id="uvIndex">UV Index: ___</h4>
+                        <h1 class="display-4" id="cityName">Search for a city</h1>
+                        <h4 id="temp"></h4>
+                        <h4 id="humidity"></h4>
+                        <h4 id="windSpeed"></h4>
+                        <h4 id="uvIndex"></h4>
+                        <!-- City Name(dd/mm/yyyy) icon -->
                     </div>                   
                 </div>
                 <!-- sub row with next 5 days forecsast -->
@@ -58,14 +59,12 @@
                               <h6 class="card-subtitle mb-2 text-muted" id="futureIcon">icon</h6>
                               <p class="card-text" id="futureTemp">Temperature: ___</p>
                             </div>
-                        </div> -->
-                        
+                        </div> -->                        
                     </div>
                     <div class="col-sm-2" id="5DayForecast1"></div>
                     <div class="col-sm-2" id="5DayForecast2"></div>
                     <div class="col-sm-2" id="5DayForecast3"></div>
                     <div class="col-sm-2" id="5DayForecast4"></div>
-
                 </div>
 
             </div>

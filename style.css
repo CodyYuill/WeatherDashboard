@@ -14,12 +14,14 @@ header{
     border-radius: 5px;
     background-color: cornflowerblue;
     min-height: 250px;
-    color: aliceblue
+    color: aliceblue;
 }
 #todaysForecast{
     border-radius: 10px;
     background-color: aquamarine;
     margin-bottom: 10px;
+    color: aliceblue;
+
 }
 /* #mainRow{
     background-color: blue;
