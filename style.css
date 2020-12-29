@@ -23,6 +23,12 @@ header{
     color: aliceblue;
 
 }
+
+#historyListItem{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
 /* #mainRow{
     background-color: blue;
 }

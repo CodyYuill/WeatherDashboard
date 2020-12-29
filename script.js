@@ -1,4 +1,7 @@
 var owKey = "82db3485b1bdbce46c2ce5d7d2f3ae57";
+var listItemArr = [];
+var maxListItemArrLength = 5;
+
 
 function searchCity()
 {
@@ -12,6 +15,7 @@ function searchCity()
         var long = data.coord.lon;
         city = data.name;
         getWeather(lat, long, city);
+        setHistoryListItem(city);
     });
 }
 
@@ -57,4 +61,24 @@ function getWeather(latitude, longitude, cityName)
         }
     });
 }
+
+function setHistoryListItem(name)
+{
+    //TODO check list if city is already in the array before checking length 
+    //TODO prolly also add to localstorage
+    var list = $("#historyList");
+    list.empty();
+    var listItem = $("<li>").text(`${name}`);
+    listItem.attr("class", "list-group-item");
+    listItem.attr("id", "historyListItem");
+    if(listItemArr.length < maxListItemArrLength)
+    {
+        listItemArr.splice(0, 0, listItem);
+    }
+    listItemArr.forEach(function(item, i) {
+        list.append(item);
+    });
+}
+
+
 $("#searchBtn").on("click", searchCity);
