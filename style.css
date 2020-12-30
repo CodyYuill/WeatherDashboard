@@ -29,6 +29,11 @@ header{
     font-weight: bold;
     font-size: 25px;
 }
+
+#historyListItem:hover{
+    color: rgb(72, 72, 253);
+    cursor: pointer;
+}
 /* #mainRow{
     background-color: blue;
 }

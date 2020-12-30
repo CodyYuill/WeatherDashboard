@@ -1,7 +1,8 @@
 var owKey = "82db3485b1bdbce46c2ce5d7d2f3ae57";
 var listItemArr = [];
-var maxListItemArrLength = 5;
 
+//TODO make on submit prevent default im pretty sure
+$("#searchBtn").on("click", searchCity);
 
 function searchCity()
 {
@@ -18,6 +19,22 @@ function searchCity()
         setHistoryListItem(city);
     });
 }
+
+function searchCityFromHistoryList(city)
+{
+    $.ajax({
+        //ottawa to test
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${owKey}`,
+        method: "GET"
+    }).done(function(data){
+        var lat = data.coord.lat;
+        var long = data.coord.lon;
+        city = data.name;
+        getWeather(lat, long, city);
+        setHistoryListItem(city);
+    });
+}
+
 
 function getWeather(latitude, longitude, cityName)
 {
@@ -64,21 +81,30 @@ function getWeather(latitude, longitude, cityName)
 
 function setHistoryListItem(name)
 {
-    //TODO check list if city is already in the array before checking length 
-    //TODO prolly also add to localstorage
+    //TODO add to localstorage
+    var cityObject = {
+        Name: name
+    };
     var list = $("#historyList");
     list.empty();
-    var listItem = $("<li>").text(`${name}`);
-    listItem.attr("class", "list-group-item");
-    listItem.attr("id", "historyListItem");
-    if(listItemArr.length < maxListItemArrLength)
+
+    if(listItemArr.some(city => city.Name === cityObject.Name))
     {
-        listItemArr.splice(0, 0, listItem);
+        //console.log("worked");
+        var indexToRemove = listItemArr.findIndex(i => i.Name === cityObject.Name);
+        listItemArr.splice(indexToRemove, 1);
+        listItemArr.splice(0, 0, cityObject);
+    }
+    else
+    {
+        listItemArr.unshift(cityObject);
     }
     listItemArr.forEach(function(item, i) {
-        list.append(item);
+        //TODO add onclick event to search
+        var listItem = $("<li>").text(`${item.Name}`);
+        listItem.attr("class", "list-group-item");
+        listItem.attr("id", "historyListItem");
+        list.append(listItem);
     });
 }
 
-
-$("#searchBtn").on("click", searchCity);
