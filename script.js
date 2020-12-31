@@ -2,9 +2,10 @@ $(document).ready(function () {
     //GLOBALS
     var owKey = "82db3485b1bdbce46c2ce5d7d2f3ae57";
     var listItemArr = [];
-
+    
+    var DateTime = luxon.DateTime;
+    var Today = DateTime.local();
     //TODO load page with last search result using localstorage
-    //TODO add dates everywhere
     //TODO make conversion from kelvin to celsius 
     //(if have time and will to work make a setting to choose F or C if not for homework but for portfolio)
 
@@ -62,12 +63,12 @@ $(document).ready(function () {
         //create get ajax request using lat na dlong
         $.ajax({
             //ottawa to test
-            url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${owKey}`,
+            url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${owKey}&units=metric`,
             method: "GET"
         }).done(function(data){
             
             //set current weather data
-            $("#cityName").text(cityName);
+            $("#cityName").text(`${cityName} (${Today.toFormat('d/MM/yyyy')})`);
             console.log(data.current.weather.icon);
             $("#icon").attr("src", `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`)
             $("#temp").text(`Temperature: ${Math.round(data.current.temp)}`);
@@ -84,7 +85,7 @@ $(document).ready(function () {
                 //make div class card body
                 var cardBody = $(`<div class="card-body"></div>`);
                 //make h5 class card-title set text as date
-                var futureDate = $(`<h5 class="card-title"></h5>`).text(`future date`);
+                var futureDate = $(`<h5 class="card-title"></h5>`).text(`${Today.plus({days: i+1}).toFormat('d/MM/yyyy')}`);
                 //make h6 class card-subtitle mb-2 text-muted
                 var futureIcon = $(`<img>`);
                 futureIcon.attr("src", `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png`)
