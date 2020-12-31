@@ -9,6 +9,9 @@ header{
 
 /* #mainContainer{
 } */
+#cityName{
+    display: inline;
+}
 
 #futureForecastCard{
     border-radius: 5px;

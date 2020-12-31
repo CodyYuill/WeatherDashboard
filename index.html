@@ -21,10 +21,10 @@
             <!-- left column with search bar and history buttons 25%-->
             <div class="col-lg-3" id="leftSide">
                 <!-- search bar -->
-                <form class="input-group mb-3">
+                <form class="input-group mb-3" id="searchArea">
                     <input type="text" class="form-control" placeholder="Search for a City"  id="searchBar">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="searchBtn">search icon</button>
+                      <button class="btn btn-outline-secondary" id="searchBtn">search icon</button>
                     </div>
                 </form>
                 <!-- history list -->
@@ -43,6 +43,7 @@
                     <div class="jumbotron" id="todaysForecast">
                         <!-- City Name(dd/mm/yyyy) icon -->
                         <h1 class="display-4" id="cityName">Search for a city</h1>
+                        <img id="icon"> <br>
                         <h4 id="temp"></h4>
                         <h4 id="humidity"></h4>
                         <h4 id="windSpeed"></h4>
