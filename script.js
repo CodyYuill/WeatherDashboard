@@ -71,7 +71,6 @@ function getWeather(latitude, longitude, cityName)
         for(var i = 0; i < forecastAmount; i++)
         {
             //TODO add humidity
-            //TODO fix duplicate date bug
             $(`#5DayForecast${i}`).empty();
             $("#cityName").text(cityName);
             //make div class card, 
@@ -79,7 +78,7 @@ function getWeather(latitude, longitude, cityName)
             //make div class card body
             var cardBody = $(`<div class="card-body"></div>`);
             //make h5 class card-title set text as date
-            var futureDate = $(`<h5 class="card-title"><h5>`).text(`future date`);
+            var futureDate = $(`<h5 class="card-title"></h5>`).text(`future date`);
             //make h6 class card-subtitle mb-2 text-muted
             var futureIcon = $(`<h6 class="card-subtitle mb-2 text-muted">icon</h6>"`);
             //make p class card-text set text to temp
