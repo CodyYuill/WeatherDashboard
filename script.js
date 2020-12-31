@@ -6,8 +6,9 @@ $(document).ready(function () {
     var DateTime = luxon.DateTime;
     var Today = DateTime.local();
     //TODO load page with last search result using localstorage
-    //TODO make conversion from kelvin to celsius 
-    //(if have time and will to work make a setting to choose F or C if not for homework but for portfolio)
+    //TODO uv index color warning code thing 
+    //TODO if have time and will to work make a setting to 
+    //choose F or C if not for homework but for portfolio[units are param in api call]
 
     //execute search on submit 
     $("#searchArea").on("submit", searchCity);
