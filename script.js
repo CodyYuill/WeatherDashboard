@@ -5,13 +5,21 @@ $(document).ready(function () {
     
     var DateTime = luxon.DateTime;
     var Today = DateTime.local();
-    //TODO load page with last search result using localstorage
-    //TODO uv index color warning code thing 
     //TODO if have time and will to work make a setting to 
     //choose F or C if not for homework but for portfolio[units are param in api call]
 
     //execute search on submit 
     $("#searchArea").on("submit", searchCity);
+
+    pageOnLoad();
+    function pageOnLoad()
+    {
+        if(localStorage.getItem("cityName"))
+        {
+            searchCityOnPageLoad(localStorage.getItem("cityName"));
+        }
+    
+    }
 
     function searchCity(e)
     {
@@ -39,7 +47,6 @@ $(document).ready(function () {
     function searchCityFromHistoryList()
     {
         var city = this.innerText;
-        console.log(city);
         $.ajax({
             //ottawa to test
             url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${owKey}`,
@@ -50,6 +57,20 @@ $(document).ready(function () {
             city = data.name;
             getWeather(lat, long, city);
             setHistoryListItem(city);
+        });
+    }
+
+    function searchCityOnPageLoad(city)
+    {
+        $.ajax({
+            //ottawa to test
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${owKey}`,
+            method: "GET"
+        }).done(function(data){
+            var lat = data.coord.lat;
+            var long = data.coord.lon;
+            city = data.name;
+            getWeather(lat, long, city);
         });
     }
 
@@ -68,14 +89,28 @@ $(document).ready(function () {
             method: "GET"
         }).done(function(data){
             
-            //set current weather data
+            //set current weather data and store city in local storage
             $("#cityName").text(`${cityName} (${Today.toFormat('d/MM/yyyy')})`);
-            console.log(data.current.weather.icon);
+            window.localStorage.setItem("cityName", `${cityName}`);
             $("#icon").attr("src", `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`)
             $("#temp").text(`Temperature: ${Math.round(data.current.temp)}`);
             $("#humidity").text(`Humidity: ${data.current.humidity}`);
             $("#windSpeed").text(`Wind Speed: ${data.current.wind_speed}`);
-            $("#uvIndex").text(`UV Index: ${data.current.uvi}`);
+            $("#uvIndexText").text('UV Index: ');
+            $("#uvIndexValue").text(`${data.current.uvi}`);
+
+            if(data.current.uvi <= 2)
+            {
+                $("#uvIndexValue").attr("id", "favorableUV");
+            }
+            if(data.current.uvi >= 3 && data.current.uvi <= 5)
+            {
+                $("#uvIndexValue").attr("id", "moderateUV");
+            }
+            if(data.current.uvi >=6)
+            {
+                $("#uvIndexValue").attr("id", "severeUV");
+            }
 
             //set forecasst data
             for(var i = 0; i < forecastAmount; i++)

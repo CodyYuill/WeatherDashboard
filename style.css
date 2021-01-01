@@ -21,10 +21,10 @@ header{
 }
 #todaysForecast{
     border-radius: 10px;
-    background-color: aquamarine;
+    background-color:royalblue ;
     margin-bottom: 10px;
     color: aliceblue;
-
+    padding: 7px;
 }
 
 #historyListItem{
@@ -36,6 +36,36 @@ header{
 #historyListItem:hover{
     color: rgb(72, 72, 253);
     cursor: pointer;
+}
+.makeInline{
+    display: inline;
+}
+
+#favorableUV{
+    background-color: green;
+    border-radius: 15%;
+    padding: 2px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#moderateUV{
+    background-color: yellow;
+    border-radius: 15%;
+    padding: 2px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#severeUV{
+    background-color: red;
+    border-radius: 15%;
+    padding: 2px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
 }
 /* #mainRow{
     background-color: blue;
