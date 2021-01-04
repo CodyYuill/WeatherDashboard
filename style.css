@@ -1,6 +1,4 @@
-body{
-    background-color: aliceblue;
-}
+
 header{
     text-align: center;
     color: aliceblue;
@@ -70,6 +68,14 @@ header{
     border-style: solid;
     border-width: 1px;
 }
+
+@media only screen and (max-width: 1400px) {
+    #futureForecastCard{
+        min-width: 140px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}
 /* #mainRow{
     background-color: blue;
 }
@@ -87,3 +93,4 @@ header{
 #rsBotRow{
     background-color: coral;
 } */
+
